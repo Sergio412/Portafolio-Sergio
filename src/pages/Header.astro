@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets'; // <-- Añade esta línea
+import Sobremi from "./Sobremi.astro";
+import Experiencia from "./Experiencia.astro";
+import Proyectos from "./Proyectos.astro";
+import Certificados from "./Certificados.astro";
+import Contactame from "./Contactame.astro";
+import logo from '../imagenes/logos.png';
+;
+---
+<header class="headers">
+     <Image src={logo} alt="el logo"/>
+    <nav>
+        <ul>
+            <li><a href="#sobremi">Sobre Mi</a></li>
+            <li><a href="#Experiencia">Experiencia</a></li>
+            <li><a href="#Proyectos">Proyectos</a></li>
+            <li><a href="#Certificados">Certificados</a></li>
+            <li><a href="#Contactame">Contactame</a></li>
+        </ul>
+    </nav>
+</header>

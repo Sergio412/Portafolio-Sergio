@@ -1,0 +1,232 @@
+---
+import { Image } from "astro:assets"; // <-- Añade esta línea
+import proyecto from "Proyecto-hotel.png";
+---
+
+<section id="Proyectos">
+  <h2 id="Proyectos-tit">PROYECTOS</h2>
+  <div class="project-cards-container">
+    <div class="project-card">
+      <div class="project-image">
+        <Image src={proyecto} alt="el logo" />
+      </div>
+      <div class="project-content">
+        <p>
+          Aquí va una descripción concisa de tu primer proyecto, explicando de
+          qué trata y su objetivo principal.
+        </p>
+        <div class="technologies">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Netbeans</span>
+          <span class="tech-tag">MYSQL</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-text">Ver Demo &rarr;</a>
+          <a
+            href="https://github.com/Sergio412/hotelreserva"
+            target="_blank"
+            class="link-text">Código &rarr;</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="Habilidades">
+    <h3 id="Tecnologias">Tecnologias</h3>
+    <div class="habilidades-intro">
+      <p>
+        En mi viaje por el <span class="highlight"
+          >mundo del desarrollo web</span
+        >, he cultivado experiencia y habilidades en una variedad de
+        tecnologías. Mi stack tecnológico incluye:
+      </p>
+    </div>
+
+    <div class="habilidades-grid">
+      <div class="habilidad-categoria">
+        <h3>Frontend</h3>
+        <div class="lenguajes-list">
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              alt="HTML5"
+            />
+            <span>HTML</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+              alt="CSS3"
+            />
+            <span>CSS</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+            />
+            <span>JavaScript</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDKn3vA2YUbXzN0ZC3gALWJ08gJN-Drl15w&s"
+              alt="TailwindCSS"
+            />
+            <span>TailwindCSS</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+              alt="SASS"
+            />
+            <span>SASS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="habilidad-categoria">
+        <h3>Backend</h3>
+        <div class="lenguajes-list">
+          <div class="lenguaje-item">
+            <img
+              src="https://i.blogs.es/e7b69c/java_logo/450_1000.webp"
+              alt="Java"
+            />
+            <span>Java</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://images-cdn.openxcell.com/wp-content/uploads/2024/07/25070933/springboot-inner.svg"
+              alt="SpringBoot"
+            />
+            <span>SpringBoot</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+              alt="NodeJS"
+            />
+            <span>NodeJS</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+              alt="MySQL"
+            />
+            <span>MySQL</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+              alt="MongoDB"
+            />
+            <span>MongoDB</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"
+              alt="Apache"
+            />
+            <span>Apache</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="habilidad-categoria">
+        <h3>Aprendiendo</h3>
+        <div class="lenguajes-list">
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+              alt="Python"
+            />
+            <span>Python</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg"
+              alt="Astro"
+            />
+            <span>Astro</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+              alt="Docker"
+            />
+            <span>Docker</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png"
+              alt="Angular"
+            />
+            <span>Angular</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="habilidad-categoria">
+        <h3>Herramientas</h3>
+        <div class="lenguajes-list">
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+              alt="Git"
+            />
+            <span>Git</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+              alt="GitHub"
+            />
+            <span>GitHub</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"
+              alt="Terminal"
+            />
+            <span>Terminal</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://draftdesignweb.com/wp-content/uploads/2023/12/logo-xampp-draftdesignweb-code.png"
+              alt="Git"
+            />
+            <span>XAMPP</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968875.png"
+              alt="Jira"
+            />
+            <span>Jira</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Microsoft_Excel_2013-2019_logo.svg/1085px-Microsoft_Excel_2013-2019_logo.svg.png"
+              alt="Excel"
+            />
+            <span>Excel</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Microsoft_Office_Word_%282019%E2%80%93present%29.svg/800px-Microsoft_Office_Word_%282019%E2%80%93present%29.svg.png"
+              alt="Word"
+            />
+            <span>Word</span>
+          </div>
+          <div class="lenguaje-item">
+            <img
+              src="https://store-images.s-microsoft.com/image/apps.32838.814c58be-89ce-4e8f-ab88-dd087ab777a8.f5b0c5b7-8119-4553-b0b4-34c7d1a31735.500e0549-c7f5-4986-83fc-aa008b2ee274"
+              alt="Aranda"
+            />
+            <span>Aranda</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

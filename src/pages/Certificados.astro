@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets'; // <-- Añade esta línea
+import Certificado1 from '../imagenes/Certificado-HTML.jpg'; // O la ruta corregida
+import Certificado2 from '../imagenes/Certificado-BD.jpg';   // Y los nombres de archivo corregidos
+import Certificado3 from '../imagenes/Certificado-Java.jpg';
+import Certificado4 from '../imagenes/Certificado-web.jpg';
+import Certificado5 from '../imagenes/Certificado-SCRUM.jpg';
+import Certificado6 from '../imagenes/Certificados-excel.jpg'; // Si existe
+---
+<section id="Certificados">
+    <h2>Mis Certificados</h2>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="carousel-item">
+                <Image src={Certificado1} alt="Certificado 1" width={800} height={600} />
+                <p>Certificado de HTML</p>
+            </div>
+            <div class="carousel-item">
+                <Image src={Certificado2} alt="Certificado 2" width={800} height={600} />
+                <p>Certificado en BD MYSQL</p>
+            </div>
+            <div class="carousel-item">
+                <Image src={Certificado3} alt="Certificado 3" width={800} height={600} />
+                <p>Certificado de JAVA</p>
+            </div>
+            <div class="carousel-item">
+                <Image src={Certificado4} alt="Certificado 4" width={800} height={600} />
+                <p>Certificado en Desarrollo web</p>
+            </div>
+            <div class="carousel-item">
+                <Image src={Certificado5} alt="Certificado 5" width={800} height={600} />
+                <p>Certificado SCRUM</p>
+            </div>
+            <div class="carousel-item">
+                <Image src={Certificado6} alt="Certificado 5" width={800} height={600} />
+                <p>Certificado SCRUM</p>
+            </div>
+            </div>
+    </div>
+</section>

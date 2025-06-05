@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets'; // <-- Añade esta línea
+import avatar from '../imagenes/avatar.png';
+
+---
+<section id="sobremi">
+  <div class="bienvenida">
+    <h1 class="h1">&lt;¡Hola, <br />soy Sergio!&gt;</h1>
+    <h2 id="texto" class="maquina"></h2>
+    <p class="texto_inicio">Soy un Ingeniero de Sistemas y desarrollador Fullstack con sólidos conocimientos en Java, SQL, HTML,CSS y JavaScript. Me apasiona construir soluciones web robustas y eficientes, transformando ideas en aplicaciones funcionales y visualmente atractivas</p>
+    <div class="cv">
+      <a href="../../public/CV_Sergio Alejandro Soto Rivera.pdf" download><button>Descargar CV</button></a>
+      <div class="redes">
+       <a href="https://www.linkedin.com/in/sergio-alejandro-soto-rivera-0b6a94192/" target="_blank"><img class="linkedin" src="https://cdn3.iconfinder.com/data/icons/2018-social-media-black-and-white-logos/1000/2018_social_media_popular_app_logo_linkedin-512.png" alt=""></a>
+        <a href="https://github.com/Sergio412 " target="_blank">
+          <img class="github" src="https://images.icon-icons.com/3685/PNG/512/github_logo_icon_229278.png" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <div class="avatar">
+     <Image src={avatar} alt="el logo"/>
+  </div>
+</section>

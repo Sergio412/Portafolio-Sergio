@@ -1,0 +1,1110 @@
+
+:root {
+  color-scheme: light dark;
+  /* Define un tamaño de fuente base para REM */
+  font-size: 16px; /* Base para rem */
+}
+
+html {
+  /* Asegura que el scroll a las anclas deje espacio para el header fijo */
+  /* Ajustado para escritorio para ser un poco más generoso que la altura del header (5rem) */
+  scroll-padding-top: 5.5rem;
+  height: 100%; /* Asegurarse de que html ocupe el 100% de la altura */
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(to bottom right, #14001a, #1e0029);
+  background-attachment: fixed;
+  color: #f5f5f5;
+  min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+  overflow-x: hidden; /* Evita el scroll horizontal no deseado */
+  height: 100%; /* Asegurarse de que body ocupe el 100% de la altura */
+}
+#Proyectos-tit {
+  display: flex;
+  justify-content: center;
+  /* Margen superior para separarlo del contenido anterior si es necesario */
+  margin-top: 3rem;
+}
+/* --- HEADER --- */
+#logo {
+  width: 6.625rem; /* 58px / 16px = 3.625rem */
+  z-index: 1;
+  padding-left: 3.125rem; /* 50px */
+}
+.headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3.125rem;; /* Ajustado para tener padding a los lados */
+  width: 100%;
+  height: 5rem; /* 80px */
+  background-color: rgba(18, 0, 30, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #8000ff;
+  box-shadow: 0 0 10px #8000ff;
+  position: fixed;
+  top: 0; /* Asegura que se fije en la parte superior */
+  left: 0;
+  z-index: 1000;
+}
+.headers ul {
+  display: flex;
+  flex-direction: row;
+  padding-right: 3.125rem; /* 50px */
+  /* Añadido para mejor responsividad en el menú */
+  flex-wrap: nowrap; /* Evita que los elementos se envuelvan en escritorio */
+  justify-content: flex-end;
+  gap: 0.625rem; /* Espacio entre elementos del menú */
+}
+.headers li {
+  list-style: none;
+  padding: 0; /* Mueve el padding al <a> */
+  margin: 0; /* Asegura que no haya margen derecho fijo */
+  border: 1px solid white;
+  border-radius: 999px;
+  /* Añadido para centrar el enlace dentro del li si el padding se mueve al a */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Asegura que el contenido no desborde */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición para el hover */
+}
+.headers li:hover {
+  background-color: #8a2be2;
+  border-color: #8a2be2; /* Cambia el color del borde en hover para un efecto completo */
+}
+.headers a {
+  text-decoration: none;
+  font-size: 1.25rem; /* 20px */
+  font-weight: bolder;
+  color: white;
+  display: block; /* Hace que el enlace ocupe todo el espacio disponible */
+  padding: 0.625rem 1.25rem; /* Vuelve a poner el padding aquí: vertical 10px, horizontal 20px */
+  width: 100%; /* Asegura que ocupe todo el ancho del li */
+  height: 100%; /* Asegura que ocupe toda la altura del li */
+  text-align: center; /* Centra el texto dentro del enlace */
+  transition: color 0.3s ease; /* Transición suave para el color del texto */
+  box-sizing: border-box; /* Incluye padding y borde en el width/height */
+}
+.headers a:hover {
+  color: #37303c;
+}
+
+/* --- SOBRE MI --- */
+#sobremi {
+  display: flex;
+  flex-direction: row; /* Por defecto en fila */
+  align-items: center;
+  /* Ajuste de padding-top para dejar espacio para el header fijo */
+  /* Aumentado ligeramente para dar más espacio bajo el header */
+  padding-top: 7rem; /* ANTES: 6.875rem (110px) - Ahora 7rem (112px) */
+  justify-content: center; /* Centrar todo el contenido */
+  gap: 2rem; /* Espacio entre el texto y el avatar */
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
+  padding-left: 1rem; /* Padding general para evitar que el contenido toque los bordes */
+  padding-right: 1rem;
+  align-content: center;
+}
+
+.bienvenida {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left; /* Alineación de texto por defecto */
+  max-width: 600px; /* Limita el ancho del texto en pantallas grandes */
+  margin-right: 0; /* Por defecto sin margin-right para mejor responsividad */
+  flex-shrink: 1; /* Permite que este elemento se encoja */
+}
+.h1{
+  font-size: 4.80rem ;
+}
+h1 {
+  font-size: 5.625rem; /* 90px */
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.1; /* Ajustar el interlineado */
+  margin-bottom: 0.5rem;
+}
+h2 {
+  font-family: "Poetsen One", sans-serif;
+  padding-top: 0.9375rem; /* 15px */
+  font-size: 1.875rem; /* 30px */
+  margin-bottom: 1rem;
+}
+h3{
+  font-family: "Poetsen One", sans-serif;
+}
+header{
+    font-family: "Poetsen One", sans-serif;
+}
+p{
+    font-family: "Noto sans", sans-serif;
+}
+a{
+      font-family: "Noto sans", sans-serif;
+}
+span{
+      font-family: "Noto sans", sans-serif;
+}
+#texto {
+  display: inline-block;
+  min-height: 3.3875rem; /* 35px */
+  white-space: nowrap;
+  font-size: 1.875rem; /* 30px */
+  /* Añadido para evitar desbordamiento en pantallas pequeñas si el texto es muy largo */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.redes {
+  display: flex;
+  justify-content: flex-start;
+  width: 11.875rem; /* 190px */
+  margin-top: 0.9375rem; /* 15px */
+  justify-content: center; /* Centrar en pantallas pequeñas */
+  width: auto; /* Permite que el ancho se ajuste al contenido */
+}
+button {
+  margin-top: 0.75rem; /* 12px */
+  font-size: 1.25rem; /* 20px */
+  background: rgba(13, 13, 13);
+  border: none;
+  padding: 0.75rem; /* 12px */
+  border-radius: 999px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #8a2be2;
+}
+.linkedin {
+  margin-right: 2.5rem; /* 40px */
+  width: 3.125rem; /* 50px */
+}
+.github {
+  width: 3.125rem; /* 50px */
+}
+.avatar {
+  padding-right: 0; /* Eliminar padding fijo */
+  text-align: center;
+  /* Flex shrink para permitir que el avatar se encoja */
+  flex-shrink: 0;
+}
+#avatars {
+  width: 18.75rem; /* 300px */
+  border-radius: 50%;
+  max-width: 90%; /* Asegura que no desborde en pantallas pequeñas */
+  height: auto;
+}
+
+/* --- FLECHA --- */
+.flecha {
+  width: 4.6875rem; /* 75px * /* Espacio debajo de la sección "Sobre mí" */
+}
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem; /* Espacio antes de la siguiente sección */
+}
+
+/* --- EXPERIENCIA --- */
+#Experiencia {
+  display: flex;
+  flex-direction: column; /* Asegura que cada item-experiencia se apile verticalmente */
+  align-items: center; /* Centra los items horizontalmente */
+  padding: 3.125rem 1rem;
+}
+.titulo_ex {
+  font-size: 2.8125rem;
+  margin-bottom: 3.125rem;
+  text-align: center;
+}
+
+.item-experiencia {
+  display: flex; /* Contenedor flex para el rombo y la caja */
+  align-items: center; /* Centra verticalmente el rombo y la caja */
+  margin-bottom: 2rem; /* Espacio entre cada elemento de experiencia */
+  width: 100%; /* Ocupa todo el ancho disponible para asegurar que se apilen */
+  max-width: 900px; /* Limita el ancho total del conjunto rombo+caja en pantallas grandes */
+  padding: 0 1rem; /* Padding horizontal para evitar que el contenido toque los bordes */
+  box-sizing: border-box;
+  justify-content: center; /* Centra el grupo rombo+caja dentro de su 100% de ancho */
+}
+
+.rombo_img {
+  width: 110px; /* Tamaño del rombo */
+  height: 125px; /* Tamaño del rombo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Asegura que el rombo esté por encima de la caja de texto */
+  overflow: hidden;
+  flex-shrink: 0; /* Evita que el rombo se encoja */
+  cursor: pointer; /* Indica que es clickeable */
+}
+
+.img_politecnico,
+.img_ecopetrol {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Forma de rombo */
+  border-radius: 0;
+}
+
+.caja-experiencia {
+  background-color: #1c0030;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+  padding: 2rem;
+  transition: transform 0.2s ease;
+  color: white;
+  width: 30.25rem; /* Ancho base que mencionaste (500px) */
+  max-width: calc(100% - 25px); /* Ajusta el ancho máximo para dejar espacio al rombo */
+  font-family: sans-serif;
+  transition: width 0.5s ease, height 0.5s ease, padding 0.5s ease,
+    border-radius 0.5s ease, clip-path 0.5s ease;
+  clip-path: polygon(
+    0% 0%,
+    88% 0%,
+    100% 50%,
+    88% 100%,
+    0% 100%,
+    0% 0%
+  ); /* Ajusta este valor (10%) para que la punta del rombo encaje perfectamente */
+  min-height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+
+  /* ESTOS SON LOS CAMBIOS CLAVE PARA EL SOLAPAMIENTO Y ALINEACIÓN */
+  margin-left: -55px; /* Mueve la caja a la izquierda para que se superponga al rombo */
+  padding-left: calc(
+    2rem + 45px
+  ); /* Añade padding extra a la izquierda para que el texto no quede bajo el rombo */
+  z-index: 1; /* Asegura que la caja esté debajo del rombo */
+}
+.caja-experiencia:hover {
+  transform: scale(1.02);
+}
+
+.caja-experiencia.expandida {
+  width: auto; /* Permite que el ancho se ajuste al contenido expandido */
+  max-width: 900px; /* Ancho máximo mayor cuando se expande */
+  height: auto;
+  min-height: 15rem;
+  border-radius: 10px;
+  padding: 1.5rem 2.5rem;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%
+  ); /* Rectangular cuando se expande */
+
+  /* Resetea los valores para el estado expandido */
+  margin-left: 0;
+  padding-left: 2.5rem;
+}
+/* Estilos para el botón de detalles */
+.boton-detalles {
+  background-color: #8a2be2; /* Color de fondo del botón */
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 1rem; /* Espacio superior para separar del texto */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: flex-end; /* Alinea el botón a la derecha dentro de la caja flex column */
+  margin-right: 10rem;
+}
+
+.boton-detalles:hover {
+  background-color: #6a1aab;
+  transform: translateY(-2px);
+}
+
+/* Estilos para el contenido oculto */
+.contenido-oculto {
+  display: none; /* Por defecto, el contenido adicional está oculto */
+}
+
+.caja-experiencia.expandida .contenido-oculto {
+  display: block; /* O block, dependiendo de cómo quieras que se vea el texto */
+}
+/* Dentro de tu bloque <style is:global> */
+.caja-experiencia.expandida .contenido-oculto ul {
+  list-style-type: disc; /* O 'circle', 'square', 'none' si no quieres viñetas */
+  margin-left: 1.5rem; /* Ajusta el margen izquierdo de la lista */
+  padding-left: 0;
+  margin-top: 1rem; /* Espacio superior si la lista sigue a un párrafo */
+}
+
+.caja-experiencia.expandida .contenido-oculto li {
+  margin-bottom: 0.5rem; /* Espacio entre los ítems de la lista */
+  line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+}
+
+.caja-experiencia.expandida .contenido-oculto p {
+  margin-bottom: 0.5rem; /* Espacio debajo de los párrafos dentro del contenido oculto */
+}
+.caja-experiencia.expandida .contenido-oculto ul {
+  list-style-type: disc; /* O 'circle', 'square', 'none' si no quieres viñetas */
+  margin-left: 1.5rem; /* Ajusta el margen izquierdo de la lista */
+  padding-left: 0;
+  margin-top: 1rem; /* Espacio superior si la lista sigue a un párrafo */
+}
+
+/* --- PROYECTOS --- */
+.project-cards-container {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas horizontalmente en el contenedor */
+    gap: 1.875rem; /* 30px - Espacio entre las tarjetas */
+    padding: 1.25rem; /* 20px - Espacio alrededor del contenedor de tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente fila en pantallas pequeñas */
+    margin-bottom: 3rem; /* Espacio antes de la siguiente sección */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px; /* O el ancho máximo que desees para el contenedor de todas las tarjetas */
+}
+
+/* Estilos de cada tarjeta individual de proyecto */
+.project-card {
+    background-color: #1a0033; /* Fondo oscuro de la tarjeta */
+    border-radius: 0.625rem; /* 10px - Bordes redondeados */
+    overflow: hidden; /* Asegura que la imagen y el contenido respeten los bordes redondeados */
+    width: 21.875rem; /* 350px - Ancho fijo para las tarjetas */
+    max-width: 90%; /* Asegura que no desborde en móviles muy pequeños */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    color: #fff; /* Color de texto predeterminado para la tarjeta */
+    display: flex; /* Habilita Flexbox para el contenido interno de la tarjeta */
+    flex-direction: column; /* Organiza el contenido de la tarjeta en columna (imagen, contenido, links) */
+    flex-shrink: 0;
+}
+
+/* Área de la imagen o banner superior de la tarjeta */
+.project-image {
+    height: 12.5rem; /* 200px - Altura fija para el área de la imagen */
+    display: flex; /* Habilita Flexbox para centrar contenido vertical y horizontalmente */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    font-size: 1.8em; /* Tamaño de fuente para el título si va aquí */
+    font-weight: bold;
+    color: #fff; /* Color del texto si pones título aquí */
+    box-sizing: border-box; /* Incluye padding y border en el height/width */
+    background-color: #333; /* Color de fondo por defecto para project-image si no hay imagen real */
+}
+
+/* Estilos para la etiqueta <img> dentro de .project-image */
+/* Esto es crucial si vas a usar <img src="..."> en el HTML */
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para cubrir el espacio sin distorsionarse */
+    display: block; /* Elimina cualquier espacio extra que algunos navegadores añaden a las imágenes */
+    border-radius: 0.625rem 0.625rem 0 0; /* Si quieres que la imagen también tenga los bordes redondeados superiores */
+}
+
+/* Contenido textual de la tarjeta */
+.project-content {
+    padding: 1.5625rem; /* 25px - Padding interno */
+    display: flex; /* Habilita Flexbox */
+    flex-direction: column; /* Contenido en columna */
+    flex-grow: 1; /* Permite que el contenido crezca para ocupar el espacio restante
+                     Esto es clave para que los `.project-links` se alineen en la parte inferior
+                     si las descripciones son de diferente longitud */
+}
+
+.project-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.625rem; /* 10px */
+    color: #fff;
+    /* Asegura que el título no desborde si es muy largo */
+    word-wrap: break-word;
+}
+
+.project-content p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 1.25rem; /* 20px */
+    color: #ccc;
+    flex-grow: 1; /* Permite que el párrafo crezca, empujando los links hacia abajo */
+}
+
+/* Contenedor de las etiquetas de tecnología */
+.technologies {
+    margin-bottom: 1.25rem; /* 20px */
+    display: flex; /* Habilita Flexbox para las etiquetas */
+    flex-wrap: wrap; /* Permite que las etiquetas se envuelvan si hay muchas */
+    gap: 0.625rem; /* 10px - Espacio entre las etiquetas */
+    /* Asegura que las tecnologías siempre estén por encima de los links,
+       especialmente si el párrafo no llena todo el espacio */
+    margin-top: auto;
+}
+
+/* Estilo de cada etiqueta de tecnología */
+.tech-tag {
+    background-color: #5a008c; /* Fondo morado oscuro */
+    color: #fff;
+    padding: 0.5rem 0.9375rem; /* 8px 15px */
+    border-radius: 1.25rem; /* 20px - Bordes muy redondeados (píldora) */
+    font-size: 0.9em;
+    white-space: nowrap; /* Evita que el texto de la etiqueta se rompa en varias líneas */
+}
+
+/* Enlaces de Ver Demo y Código */
+.project-links {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Distribuye el espacio entre los enlaces */
+    align-items: center; /* Centra los enlaces verticalmente */
+    margin-top: auto; /* Empuja los enlaces al final del .project-content */
+}
+
+.link-text {
+    color: #9370db; /* Color morado claro */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.link-text:hover {
+    color: #d8bfd8; /* Color al pasar el ratón */
+}
+
+
+.project-cards-container .project-card:nth-child(2) .project-image {
+    background-color: #8A2BE2 !important; 
+}
+
+/* Si el H3 está dentro de la .project-image para el segundo proyecto, ajusta su estilo */
+.project-cards-container .project-card:nth-child(2) .project-image h3 {
+    color: #fff; /* Asegura que el texto sea blanco */
+    font-size: 1.8em; /* O el tamaño que desees para ese título */
+    margin: 0; /* Elimina márgenes por defecto del h3 */
+    text-align: center;
+}
+
+/* --- CERTIFICADOS --- */
+#Certificados {
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+#Certificados h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #e0b0ff;
+}
+
+.carousel-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  width: 300px; /* Mantenemos este ancho base y lo ajustamos con media queries */
+  margin: 0 15px;
+  background-color: #2b004a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.carousel-item p {
+  font-size: 1rem;
+  color: #c0c0c0;
+  margin: 0;
+}
+
+/* --- CONTACTAME --- */
+#Contactame {
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+#Contactame h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #e0b0ff;
+  text-align: center;
+}
+
+#Contactame form {
+  background-color: #2b004a;
+  max-width: 550px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #c0c0c0;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #5a0099;
+  border-radius: 5px;
+  background-color: #3f006b;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group textarea::placeholder {
+  color: #a0a0a0;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  border-color: #e0b0ff;
+  box-shadow: 0 0 8px rgba(224, 176, 255, 0.6);
+  outline: none;
+}
+
+.submit-button {
+  background-color: #8a2be2;
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #6a1aab;
+  transform: translateY(-2px);
+}
+
+/* --- HABILIDADES (ya tenías buenas media queries aquí) --- */
+#Habilidades {
+  color: white;
+  padding: 3rem 1rem;
+  font-family: sans-serif;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.habilidades-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.habilidades-intro .highlight {
+  color: #e0b0ff;
+  font-weight: bold;
+}
+
+.habilidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.habilidad-categoria {
+  background-color: #2b004a;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.habilidad-categoria h3 {
+  font-size: 1.8rem;
+  color: #e0b0ff;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #5a0099;
+  padding-bottom: 0.8rem;
+  display: inline-block;
+}
+
+.lenguajes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.lenguaje-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 90px;
+}
+
+.lenguaje-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 5px rgba(224, 176, 255, 0.3));
+}
+
+.lenguaje-item span {
+  font-size: 0.9rem;
+  color: #c0c0c0;
+  font-weight: 500;
+}
+
+/* ==================================================================================================== */
+/* MEDIA QUERIES */
+/* ==================================================================================================== */
+
+/* Teléfonos pequeños a grandes (ej. 320px a 767px) */
+@media (max-width: 767px) {
+  :root {
+    font-size: 14px; /* Reduce la base de REM para dispositivos pequeños */
+  }
+
+  html {
+    /* Aumentado ligeramente para dar m\u00E1s espacio debajo del header m\u00F3vil */
+    scroll-padding-top: 13rem; /* ANTES: 4.5rem */
+  }
+
+  .headers {
+    height: auto; /* Altura automática para que se ajuste al contenido envuelto */
+    padding: 0.8rem 1rem;
+    flex-direction: column; /* Apila el logo y el menú verticalmente */
+    align-items: center; /* Centra los elementos */
+    gap: 0.5rem; /* Espacio entre el logo y el menú */
+  }
+  #logo {
+    width: 4.5rem; /* Logo más pequeño en móvil */
+    padding-left: 0; /* Quitar padding lateral para centrar */
+  }
+  .headers ul {
+    flex-direction: row; /* Sigue en fila, pero ahora dentro de una columna */
+    padding-right: 0; /* Quitar padding lateral */
+    justify-content: center; /* Centra los botones del menú */
+    flex-wrap: wrap; /* ¡Importante! Permite que los botones se envuelvan */
+    gap: 0.4rem; /* Espacio más pequeño entre botones */
+    width: 100%; /* Ocupa el ancho completo disponible */
+  }
+  .headers li {
+    padding: 0; /* Asegurarse de que no tenga padding en móvil */
+    margin: 0.2rem; /* Pequeño margen para separar los botones envueltos */
+  }
+  .headers a {
+    font-size: 0.85rem; /* Texto del menú más pequeño en móvil */
+    padding: 0.3rem 0.5rem; /* Padding ajustado para botones más pequeños */
+    width: 100%;
+    height: 100%;
+  }
+
+  #sobremi {
+    flex-direction: column; /* Apila elementos verticalmente */
+    text-align: center; /* Centra el texto */
+    /* Aumentado para asegurar que el contenido no se oculte tras el header móvil */
+    padding-top: 12rem; /* ANTES: 5rem */
+    min-height: auto; /* Altura automática */
+    /* Asegúrate de que el gap sea adecuado para un layout de columna */
+    gap: 1.5rem;
+  }
+  .bienvenida {
+    align-items: center; /* Centra el contenido en columnas */
+    padding: 0 1rem;
+    /* Eliminar el margen derecho que podría empujar el contenido */
+    margin-right: 0;
+    max-width: 100%; /* Ocupa el ancho completo disponible */
+  }
+  h1 {
+    font-size: 2.8rem; /* Tamaño de h1 más pequeño */
+    line-height: 1.2;
+  }
+  #texto {
+    font-size: 1.2rem; /* Tamaño de texto de escritura más pequeño */
+    min-height: 25px; /* Asegura un espacio para el texto */
+    /* Permite que el texto se ajuste si es demasiado largo */
+    white-space: normal;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  .redes {
+    justify-content: center; /* Centra los iconos de redes */
+    width: 100%;
+    margin-top: 1rem;
+  }
+  button {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+  .avatar {
+    margin-top: 2rem; /* Espacio entre el texto y el avatar */
+  }
+  #avatars {
+    width: 12rem; /* Avatar más pequeño */
+  }
+
+  .flecha {
+    width: 3.5rem; /* Flecha más pequeña */
+    margin-top: 1rem;
+  }
+
+  #Experiencia {
+    padding: 2rem 0.5rem;
+  }
+  .titulo_ex {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .item-experiencia {
+    flex-direction: column; /* Apila la imagen y la caja de experiencia */
+    align-items: center;
+    margin-bottom: 1.5rem;
+    /* Eliminar cualquier padding horizontal que pudiera crear desbordamiento */
+    padding: 0;
+  }
+  .rombo_img {
+    width: 4rem; /* Rombo más pequeño */
+    height: 4.5rem;
+    /* Resetear propiedades de posicionamiento para móvil */
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin-left: 0; /* Asegurarse de que no haya margen izquierdo de solapamiento */
+    margin-right: 0; /* Asegurarse de que no haya margen derecho de solapamiento */
+    margin-bottom: -1.5rem; /* Mueve la caja encima un poco */
+  }
+  .caja-experiencia {
+    width: 90%; /* Ancho más flexible */
+    max-width: 300px; /* Limita el ancho máximo */
+    padding: 1rem;
+    /* Resetear los márgenes de solapamiento y padding para móvil */
+    margin-left: 0;
+    padding-left: 1rem;
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%
+    ); /* Siempre rectangular en móviles */
+    text-align: center; /* Centrar el texto dentro de la caja en móvil */
+  }
+  .caja-experiencia.expandida {
+    width: 95%; /* Un poco más grande al expandirse */
+    height: auto;
+    min-height: 10rem;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+  }
+  .caja-experiencia h3 {
+    font-size: 1.2rem;
+  }
+  .caja-experiencia p {
+    font-size: 0.85rem;
+  }
+  .boton-detalles {
+    /* Centrar el botón de detalles en móvil */
+    align-self: center;
+    margin-right: 0;
+  }
+  /* Ajustes para el contenido oculto en móvil */
+  .caja-experiencia.expandida .contenido-oculto ul {
+    margin-left: 0; /* Eliminar el margen izquierdo si no se desea en móvil */
+    text-align: left; /* Asegurar que la lista esté alineada a la izquierda */
+    list-style-position: inside; /* Mueve las viñetas dentro del contenido */
+  }
+
+  .project-card {
+    width: 90%; /* Las tarjetas de proyecto ocupan casi todo el ancho */
+    max-width: 300px; /* Limita su tamaño máximo */
+  }
+  .project-image {
+    height: 10rem; /* Menor altura de imagen */
+    font-size: 1.4em;
+  }
+  .project-content {
+    padding: 1.2rem;
+  }
+  .project-content h3 {
+    font-size: 1.3em;
+  }
+  .project-content p {
+    font-size: 0.9em;
+  }
+  .technologies {
+    justify-content: center; /* Centrar las etiquetas de tecnología */
+  }
+  .tech-tag {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8em;
+  }
+  .project-links {
+    flex-direction: column; /* Apila los enlaces en móvil */
+    gap: 0.8rem;
+  }
+  .link-text {
+    font-size: 1em;
+  }
+
+  #Certificados h2 {
+    font-size: 1.8rem;
+  }
+  .carousel-item {
+    width: 250px; /* Ajuste para el carrusel en móviles */
+    margin: 0 10px;
+    padding: 1rem;
+  }
+  .carousel-item img {
+    max-height: 150px;
+  }
+  .carousel-item p {
+    font-size: 0.9rem;
+  }
+
+  #Contactame h2 {
+    font-size: 2rem;
+  }
+  #Contactame form {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  .form-group label {
+    font-size: 1rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  .submit-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .habilidades-intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .habilidad-categoria {
+    padding: 1.5rem;
+  }
+  .habilidad-categoria h3 {
+    font-size: 1.5rem;
+  }
+  .habilidades-grid {
+    grid-template-columns: 1fr; /* Una sola columna en móviles */
+    gap: 1.5rem;
+  }
+  .lenguaje-item {
+    width: 70px;
+  }
+  .lenguaje-item img {
+    width: 40px;
+    height: 40px;
+  }
+  .lenguaje-item span {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablets (ej. 768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    font-size: 15px; /* Ligeramente más pequeño que el escritorio */
+  }
+
+  html {
+    /* Aumentado ligeramente para dar m\u00E1s espacio debajo del header en tablets */
+    scroll-padding-top: 5.5rem; /* ANTES: 5rem */
+  }
+
+  .headers {
+    height: 4.5rem; /* Altura un poco menor para tablets */
+    padding: 1rem 2rem;
+  }
+  #logo {
+    width: 5.5rem;
+    padding-left: 2rem;
+  }
+  .headers ul {
+    padding-right: 2rem;
+    gap: 0.5rem;
+    flex-wrap: wrap; /* Permitir que se envuelvan si la pantalla es muy estrecha dentro del rango tablet */
+    justify-content: flex-end; /* Mantener la alineación a la derecha */
+  }
+  .headers li {
+    padding: 0; /* Asegurarse de que no tenga padding en tablet */
+  }
+  .headers a {
+    font-size: 0.95rem; /* Texto del menú ligeramente más pequeño */
+    padding: 0.45rem 0.75rem; /* Padding ajustado para tablets */
+    width: 100%;
+    height: 100%;
+  }
+
+  #sobremi {
+    /* Aumentado para asegurar que el contenido no se oculte tras el header en tablets */
+    padding-top: 6.5rem; /* ANTES: 6rem */
+    flex-direction: row; /* Vuelve a la fila en tablets */
+    justify-content: space-around; /* Distribuye mejor el espacio */
+    gap: 2rem; /* Ajustar el gap para tablet */
+  }
+  .bienvenida {
+    padding-left: 0;
+    align-items: flex-start;
+    text-align: left;
+    margin-right: 0; /* Eliminar el margen derecho */
+    max-width: 450px; /* Limitar el ancho en tablets */
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  #texto {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .avatar {
+    padding-right: 0;
+  }
+  #avatars {
+    width: 15rem;
+  }
+  .redes {
+    justify-content: flex-start; /* Alinear a la izquierda en tablets */
+    width: auto;
+  }
+  .linkedin {
+    margin-right: 2rem;
+  }
+
+  .titulo_ex {
+    font-size: 2.5rem;
+  }
+  .item-experiencia {
+    justify-content: center; /* Centra los items */
+    padding: 0 0.5rem; /* Ligeramente menos padding horizontal */
+  }
+  .rombo_img {
+    margin-right: 0; /* Asegurarse de que no haya margen derecho */
+    margin-left: -55px; /* Mantener solapamiento con caja */
+  }
+  .caja-experiencia {
+    width: 30rem; /* Más grande que en móvil, pero no tanto como escritorio */
+    max-width: calc(100% - 25px); /* Ajuste basado en el rombo */
+    padding-left: calc(2rem + 45px); /* Mantener padding de solapamiento */
+  }
+  .caja-experiencia.expandida {
+    width: 40rem;
+    max-width: 900px; /* Asegura que no se estire demasiado */
+    margin-left: 0; /* Resetea el margen para expandido */
+    padding-left: 2.5rem; /* Resetea el padding para expandido */
+  }
+  .boton-detalles {
+    align-self: flex-end;
+    margin-right: 0; /* Ajusta este valor si necesitas un margen específico */
+  }
+
+  .project-card {
+    width: 20rem; /* Ligeramente más pequeñas para que quepan 2 o 3 */
+  }
+  .project-cards-container {
+    gap: 1.5rem;
+  }
+
+  #Certificados h2 {
+    font-size: 2.2rem;
+  }
+  .carousel-item {
+    width: 280px;
+    margin: 0 12px;
+  }
+
+  #Contactame h2 {
+    font-size: 2.2rem;
+  }
+  #Contactame form {
+    max-width: 500px;
+  }
+
+  .habilidades-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* 2 columnas en tablets */
+    gap: 1.5rem;
+  }
+}
+
+/* Desktops (ej. 1025px y más) */
+@media (min-width: 1025px) {
+  /* Los estilos base ya están optimizados para escritorio,
+        así que no se necesitan muchos cambios aquí. */
+}
