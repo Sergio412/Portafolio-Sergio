@@ -1070,7 +1070,7 @@ button:hover {
   }
   .boton-detalles {
     align-self: flex-end;
-    margin-right: 0; /* Ajusta este valor si necesitas un margen específico */
+    margin-right: 2rem; /* Ajusta este valor si necesitas un margen específico */
   }
 
   .project-card {

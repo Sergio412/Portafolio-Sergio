@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Script para el carrusel de certificados
+// --------------------------Script para el carrusel de certificados-------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   // Usamos 'as HTMLElement | null' para indicar que querySelector puede devolver null.
   const carouselContainer = document.querySelector(".carousel-container") as HTMLElement | null;
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       // --- Configuración de la animación con JavaScript ---
-      const pixelsPerSecond: number = 200; // Añadimos el tipo 'number'
+      const pixelsPerSecond: number = 150; // Añadimos el tipo 'number'
       let currentPosition: number = 0; // Añadimos el tipo 'number'
       let animationFrameId: number; // Añadimos el tipo 'number' (para el ID del requestAnimationFrame)
       let lastTimestamp: DOMHighResTimeStamp; // Añadimos el tipo 'DOMHighResTimeStamp'
