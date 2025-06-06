@@ -1,10 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import Header from "./Header.astro";
 import Sobremi from "./Sobremi.astro";
 import Experiencia from "./Experiencia.astro";
 import Proyectos from "./Proyectos.astro";
 import Certificados from "./Certificados.astro";
 import Contactame from "./Contactame.astro";
+import flecha from "../imagenes/arrow-right.png";
 import "../styles/main.css";
 ---
 
@@ -18,8 +20,7 @@ import "../styles/main.css";
       href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Staatliches&display=swap"
       rel="stylesheet"
     />
-    
-    
+
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Portafolio Sergio</title>
@@ -27,11 +28,14 @@ import "../styles/main.css";
   <body>
     <Header />
     <Sobremi />
+    <div class="arrow">
+      <Image class="flecha" src={flecha} alt="flecha" />
+    </div>
     <Experiencia />
     <Proyectos />
     <Certificados />
     <Contactame />
 
-     <script src="../scripts/main.ts"></script>
+    <script src="../scripts/main.ts"></script>
   </body>
 </html>

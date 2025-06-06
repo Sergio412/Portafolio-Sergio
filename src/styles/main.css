@@ -103,7 +103,7 @@ body {
   align-items: center;
   /* Ajuste de padding-top para dejar espacio para el header fijo */
   /* Aumentado ligeramente para dar más espacio bajo el header */
-  padding-top: 7rem; /* ANTES: 6.875rem (110px) - Ahora 7rem (112px) */
+  padding-top: 5.0rem; /* ANTES: 6.875rem (110px) - Ahora 7rem (112px) */
   justify-content: center; /* Centrar todo el contenido */
   gap: 2rem; /* Espacio entre el texto y el avatar */
   flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
@@ -207,9 +207,10 @@ button:hover {
 
 /* --- FLECHA --- */
 .flecha {
-  width: 4.6875rem; /* 75px * /* Espacio debajo de la sección "Sobre mí" */
+  width: 7.6875rem; /* 75px * /* Espacio debajo de la sección "Sobre mí" */
+  height: 8rem;
 }
-.arrow {
+.arrow{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -811,7 +812,7 @@ button:hover {
   }
 
   .flecha {
-    width: 3.5rem; /* Flecha más pequeña */
+    width: 7.5rem; /* Flecha más pequeña */
     margin-top: 1rem;
   }
 
