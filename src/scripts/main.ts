@@ -66,134 +66,42 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --------------------------Script para el carrusel de certificados-------------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-  // Usamos 'as HTMLElement | null' para indicar que querySelector puede devolver null.
-  const carouselContainer = document.querySelector(".carousel-container") as HTMLElement | null;
-  const carouselTrack = document.querySelector(".carousel-track") as HTMLElement | null;
-  // querySelectorAll devuelve NodeListOf<Element>. Usamos Array.from y luego 'as HTMLElement[]'
-  // para tipar el array resultante si estamos seguros de que serán elementos HTML.
-  const carouselItems = Array.from(document.querySelectorAll(".carousel-item")) as HTMLElement[];
 
-  if (!carouselContainer || !carouselTrack || carouselItems.length === 0) {
-    console.warn(
-      "Advertencia: Elementos del carrusel no encontrados. El carrusel no funcionará."
-    );
-    return; // Añadir un 'return' para salir si no se encuentran los elementos
+
+// src/scripts/carousel.ts
+let currentIndex = 0;
+
+window.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".carousel-track") as HTMLElement;
+  const items = document.querySelectorAll(".carousel-item");
+  const itemWidth = items[0].clientWidth + 30; // 300px + 2*15px margin
+  const totalItems = items.length;
+
+  const prevBtn = document.getElementById("prevBtn") as HTMLButtonElement;
+  const nextBtn = document.getElementById("nextBtn") as HTMLButtonElement;
+
+  function updateCarousel() {
+    const offset = -currentIndex * itemWidth;
+    track.style.transform = `translateX(${offset}px)`;
   }
 
-  console.log("Script de carrusel cargado.");
-
-  const allImagesLoaded = carouselItems.map((item) => {
-    const img = item.querySelector("img"); // querySelector devuelve HTMLImageElement | null
-    if (img && !img.complete) {
-      return new Promise<void>((resolve) => {
-        img.addEventListener("load", () => resolve());
-        img.addEventListener("error", () => {
-          console.error(`Error al cargar imagen: ${img ? img.src : 'URL desconocida'}`); // Agregamos verificación para img.src
-          resolve();
-        });
-      });
-    }
-    return Promise.resolve();
+  prevBtn?.addEventListener("click", () => {
+    currentIndex = Math.max(currentIndex - 1, 0);
+    updateCarousel();
   });
 
-  Promise.all(allImagesLoaded)
-    .then(() => {
-      console.log("Todas las imágenes del carrusel han terminado de cargar.");
+  nextBtn?.addEventListener("click", () => {
+    const maxIndex = totalItems - Math.floor(window.innerWidth / itemWidth);
+    currentIndex = Math.min(currentIndex + 1, maxIndex);
+    updateCarousel();
+  });
 
-      let totalOriginalWidth: number = 0; // Añadimos el tipo 'number'
-      carouselItems.forEach((item) => {
-        // 'item' ya es HTMLElement[] gracias a la aserción inicial
-        const itemWidth: number = item.offsetWidth; // Añadimos el tipo 'number'
-        const itemStyle: CSSStyleDeclaration = window.getComputedStyle(item); // Añadimos el tipo 'CSSStyleDeclaration'
-        const itemMarginLeft: number = parseFloat(itemStyle.marginLeft); // Añadimos el tipo 'number'
-        const itemMarginRight: number = parseFloat(itemStyle.marginRight); // Añadimos el tipo 'number'
-        totalOriginalWidth += itemWidth + itemMarginLeft + itemMarginRight;
-      });
+  // Autoplay opcional
+  setInterval(() => {
+    const maxIndex = totalItems - Math.floor(window.innerWidth / itemWidth);
+    currentIndex = (currentIndex + 1) > maxIndex ? 0 : currentIndex + 1;
+    updateCarousel();
+  }, 6000);
 
-      // Duplicar visualmente los ítems para el efecto de bucle suave
-      // Clona una cantidad suficiente de ítems para cubrir la vista y asegurar el bucle
-      const numItemsToClone: number = carouselItems.length; // Añadimos el tipo 'number'
-      for (let i = 0; i < numItemsToClone; i++) {
-        if (carouselItems[i]) {
-          // cloneNode devuelve Node. Lo convertimos a HTMLElement.
-          const clone = carouselItems[i].cloneNode(true) as HTMLElement;
-          if (carouselTrack) { // Asegurarse de que carouselTrack no es null
-              carouselTrack.appendChild(clone);
-          }
-        }
-      }
-
-      // Recalcular el ancho total del track después de añadir clones
-      let fullTrackWidthWithClones: number = 0; // Añadimos el tipo 'number'
-      // child aquí es de tipo Element. Lo convertimos a HTMLElement.
-      Array.from(carouselTrack.children).forEach((child) => {
-        const childEl = child as HTMLElement; // Casting
-        const childWidth: number = childEl.offsetWidth; // Añadimos el tipo 'number'
-        const childStyle: CSSStyleDeclaration = window.getComputedStyle(childEl); // Añadimos el tipo 'CSSStyleDeclaration'
-        const childMarginLeft: number = parseFloat(childStyle.marginLeft); // Añadimos el tipo 'number'
-        const childMarginRight: number = parseFloat(childStyle.marginRight); // Añadimos el tipo 'number'
-        fullTrackWidthWithClones +=
-          childWidth + childMarginLeft + childMarginRight;
-      });
-      if (carouselTrack) { // Asegurarse de que carouselTrack no es null
-        carouselTrack.style.width = `${fullTrackWidthWithClones}px`;
-      }
-
-
-      console.log(
-        "Ancho total de los items originales:",
-        totalOriginalWidth,
-        "px"
-      );
-      console.log(
-        "Ancho del track con clones:",
-        fullTrackWidthWithClones,
-        "px"
-      );
-
-      // --- Configuración de la animación con JavaScript ---
-      const pixelsPerSecond: number = 150; // Añadimos el tipo 'number'
-      let currentPosition: number = 0; // Añadimos el tipo 'number'
-      let animationFrameId: number; // Añadimos el tipo 'number' (para el ID del requestAnimationFrame)
-      let lastTimestamp: DOMHighResTimeStamp; // Añadimos el tipo 'DOMHighResTimeStamp'
-
-      // La función para el requestAnimationFrame
-      const startScrolling = (timestamp: DOMHighResTimeStamp) => {
-        if (!lastTimestamp) lastTimestamp = timestamp;
-        const deltaTime: number = timestamp - lastTimestamp; // Añadimos el tipo 'number'
-        lastTimestamp = timestamp;
-
-        currentPosition -= pixelsPerSecond * (deltaTime / 1000);
-
-        if (currentPosition <= -totalOriginalWidth) {
-          currentPosition += totalOriginalWidth;
-        }
-        if (carouselTrack) { // Asegurarse de que carouselTrack no es null
-            carouselTrack.style.transform = `translateX(${currentPosition}px)`;
-        }
-        animationFrameId = requestAnimationFrame(startScrolling);
-      };
-
-      const stopScrolling = () => {
-        if (animationFrameId) {
-          cancelAnimationFrame(animationFrameId);
-        }
-      };
-
-      startScrolling(performance.now());
-
-      if (carouselContainer) { // Asegurarse de que carouselContainer no es null
-        carouselContainer.addEventListener("mouseenter", stopScrolling);
-        carouselContainer.addEventListener("mouseleave", () => {
-          lastTimestamp = performance.now();
-          startScrolling(lastTimestamp);
-        });
-      }
-
-      console.log("Carrusel iniciado con JavaScript.");
-    })
-    .catch((error: unknown) => { // Añadimos el tipo 'unknown' para el error
-      console.error("Error general en el script del carrusel:", error);
-    });
+  window.addEventListener("resize", updateCarousel);
 });

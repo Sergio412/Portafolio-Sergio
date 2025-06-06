@@ -524,7 +524,9 @@ button:hover {
 }
 
 .carousel-track {
-  display: flex;
+   display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
 }
 
 .carousel-item {

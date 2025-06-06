@@ -1,13 +1,12 @@
 ---
-import { Image } from "astro:assets"; // <-- Añade esta línea
-import Certificado1 from "../imagenes/Certificado-HTML.jpg"; // O la ruta corregida
-import Certificado2 from "../imagenes/Certificado-BD.jpg"; // Y los nombres de archivo corregidos
+import { Image } from "astro:assets";
+import Certificado1 from "../imagenes/Certificado-HTML.jpg";
+import Certificado2 from "../imagenes/Certificado-BD.jpg";
 import Certificado3 from "../imagenes/Certificado-Java.jpg";
 import Certificado4 from "../imagenes/Certificado-web.jpg";
 import Certificado5 from "../imagenes/Certificado-SCRUM.jpg";
-import Certificado6 from "../imagenes/Certificados-excel.jpg"; // Si existe
+import Certificado6 from "../imagenes/Certificados-excel.jpg";
 ---
-
 <section id="Certificados">
   <h2>Mis Certificados</h2>
   <div class="carousel-container">
@@ -37,5 +36,13 @@ import Certificado6 from "../imagenes/Certificados-excel.jpg"; // Si existe
         <p>Certificado word excel</p>
       </div>
     </div>
+    <!-- Botones -->
+    <div class="carousel-buttons">
+      <button id="prevBtn" aria-label="Anterior">‹</button>
+      <button id="nextBtn" aria-label="Siguiente">›</button>
+    </div>
   </div>
 </section>
+
+<!-- Vincular el script -->
+<script type="module" src="/scripts/carrusel.ts"></script>
